@@ -1,15 +1,107 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+    @apply bg-white dark:bg-gray-950;
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+    @media (prefers-color-scheme: dark) {
+        color-scheme: dark;
+    }
+}
+
+:root {
+    /* --background: #17161b;
+    --primary: #7e62f3;
+    --secondary: #28272c;
+    --acent: #9092da;
+    --text: #f1f1f3; */
+    --background: #16161a;
+    --background2: #17161b;
+    --primary: #7f5af0;
+    --secondary: #72757e;
+    --acent: #9092da;
+    --text: #f1f1f3;
+    --paragraphy: #94a1b2;
+    --headline: #fffffe;
+    --card-background: #1f1e24;
+    --card-background2: #28272c;
+    --muted: #3e3d45;
+    --gray: #99a1af;
+
+    --color1: #cfff5e;
+    --color2: #8c7dff;
+    --color3: #b87eed;
+    --color4: #fdf7e7;
+}
+
+.dark {
+    --background: #16161a;
+    --primary: #7f5af0;
+    --secondary: #72757e;
+    --acent: #9092da;
+    --text: #f1f1f3;
+    --paragraphy: #94a1b2;
+    --headline: #fffffe;
+}
+
+/* styles/globals.css */
+
+.react-calendar {
+    border: none;
+}
+
+.react-calendar__month-view__weekdays {
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.react-calendar__month-view__weekdays__weekday {
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+.react-calendar__month-view__days {
+    text-align: center;
+}
+
+/* Exemplo adicional em CSS (caso precise customizar fora do Tailwind) */
+
+.react-calendar__tile {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.marquee {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    height: 40px;
+    align-items: center;
+}
+
+.marquee-content {
+    display: inline-flex;
+    animation: marquee-scroll 10 s linear infinite;
+}
+
+.marquee-content span {
+    padding-right: 2rem;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
