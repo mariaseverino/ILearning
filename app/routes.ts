@@ -16,11 +16,11 @@ export default [
         route('enroll-courses', 'routes/enroll-courses.tsx'),
         route('settings', 'routes/settings.tsx'),
     ]),
-    layout('layout/layout.tsx', [
-        route('course/:slug/overview', 'routes/course-overview.tsx'),
-        route(
-            'course/:slugCourse/lesson/:slugLesson',
-            'routes/watch-lesson.tsx'
-        ),
-    ]),
+    // layout('layout/layout.tsx', [
+    //     route('course/:slug/overview', 'routes/course-overview.tsx'),
+    //     route(
+    //         'course/:slugCourse/lesson/:slugLesson',
+    //         'routes/watch-lesson.tsx'
+    //     ),
+    // ]),
 ] satisfies RouteConfig;
