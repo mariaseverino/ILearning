@@ -81,8 +81,8 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
                     loop
                     autoplay
                 />
-                <Link to="/my-profile" className="text-(--color2)">
-                    Pagina nao encontrada! Voltar para Minha conta
+                <Link to="/" className="text-(--color2)">
+                    Pagina nao encontrada! Voltar para tela inicial.
                 </Link>
             </div>
         </main>

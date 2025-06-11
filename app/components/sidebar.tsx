@@ -7,7 +7,7 @@ export default function Sidebar() {
             <div className="bg-(--card-background) flex flex-col justify-between h-2/3 ml-4 rounded-full">
                 <nav className="flex flex-col gap-4 items-center">
                     <NavLink
-                        to="/my-profile"
+                        to="/"
                         className={({ isActive }) =>
                             `p-3 ${
                                 isActive ? 'bg-(--color2)/20 rounded-full' : ''

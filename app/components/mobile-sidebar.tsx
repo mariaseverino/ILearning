@@ -44,7 +44,7 @@ export default function MobileSidebar({ clouseSidebar }: MobileSidebarProps) {
                 <div className="flex flex-col justify-between flex-1">
                     <nav className="flex flex-col gap-4 w-44">
                         <NavLinkItem
-                            navigateTo="/my-profile"
+                            navigateTo="/"
                             className="flex items-center gap-2"
                         >
                             <House className="size-6 text-(--color2) " />
