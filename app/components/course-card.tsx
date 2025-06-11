@@ -1,6 +1,5 @@
 import { Code, CodeXml, LayoutGrid, Server } from 'lucide-react';
 import { Link } from 'react-router';
-import { Tag } from '~/routes/course-overview';
 import { generateSlug } from '~/utils/generateSlug';
 
 export interface Lesson {
@@ -25,6 +24,24 @@ interface CourseCardProps {
     tags?: string[];
     duration?: number;
     progress?: number;
+}
+
+interface TagProps {
+    title: string;
+    className?: string;
+}
+
+export function Tag({
+    title,
+    className = 'border-(--secondary) text-(--secondary)',
+}: TagProps) {
+    return (
+        <span
+            className={`rounded-full px-3 py-1 border-2 font-medium ${className}`}
+        >
+            {title}
+        </span>
+    );
 }
 
 export default function CourseCard({
