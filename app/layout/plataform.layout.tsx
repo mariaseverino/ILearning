@@ -1,5 +1,4 @@
 import { Outlet } from 'react-router';
-import avatar from './avatar.png';
 import Sidebar from '~/components/sidebar';
 import { useState } from 'react';
 import { Menu } from 'lucide-react';
