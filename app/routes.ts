@@ -6,12 +6,12 @@ import {
 } from '@react-router/dev/routes';
 
 export default [
-    index('routes/home.tsx'),
-    route('login', 'routes/login.tsx'),
-    route('register', 'routes/register.tsx'),
+    // index('routes/home.tsx'),
+    // route('login', 'routes/login.tsx'),
+    // route('register', 'routes/register.tsx'),
     layout('layout/plataform.layout.tsx', [
-        route('dashboard', 'routes/dashboard.tsx'),
-        route('my-profile', 'routes/my-profile.tsx'),
+        // route('dashboard', 'routes/dashboard.tsx'),
+        index('routes/my-profile.tsx'),
         route('catalog', 'routes/catalog.tsx'),
         route('enroll-courses', 'routes/enroll-courses.tsx'),
         route('settings', 'routes/settings.tsx'),
