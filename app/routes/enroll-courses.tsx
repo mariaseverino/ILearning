@@ -114,19 +114,22 @@ export default function EnrollCourses() {
                     Continue seus estudos
                 </p>
             </div>
-            <div className="grid grid-cols-4 gap-5">
-                <div className="grid grid-cols-3 gap-5 col-span-3">
-                    {courses.map((course, index) => (
-                        <CourseCard
-                            title={course.title}
-                            category={course.category}
-                            instructor={course.instructor}
-                            progress={60}
-                            key={index}
-                        />
-                    ))}
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
+                <div className="lg:col-span-3 order-2 lg:order-1">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+                        {courses.map((course, index) => (
+                            <CourseCard
+                                title={course.title}
+                                category={course.category}
+                                instructor={course.instructor}
+                                progress={60}
+                                key={index}
+                            />
+                        ))}
+                    </div>
                 </div>
-                <div className="col-span-1">
+
+                <div className="lg:col-span-1 order-1 lg:order-2">
                     <CatalogFilter />
                 </div>
             </div>

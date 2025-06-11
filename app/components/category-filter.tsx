@@ -10,7 +10,7 @@ export default function CategoryFilter({
     return (
         <div className="flex flex-wrap gap-2">
             {categoryOptions.map((option, index) => (
-                <div key={index} className="relative">
+                <div key={index} className="">
                     <input
                         type="checkbox"
                         id={`${category}-${index}`}
