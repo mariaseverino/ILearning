@@ -133,8 +133,8 @@ export default function MyProfile() {
                         Olá, Maria!
                     </h1>
                 </div>
-                <div className="flex bg-(--card-background) rounded-2xl px-8 py-5 items-center gap-8">
-                    <div>
+                <div className="md:grid grid-cols-3 bg-(--card-background) rounded-2xl px-8 py-5 items-center gap-8">
+                    <div className="col-span-1">
                         <p className="text-(--headline) mb-6 text-xl">
                             Voce iniciou 6 cursos essa semana
                         </p>
@@ -146,25 +146,39 @@ export default function MyProfile() {
                         </Link>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-5">
+                    {/* Cursos visíveis apenas até o `md` */}
+                    <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-2 lg:hidden col-span-2 overflow-hidden">
+                        {courses.slice(0, 2).map((course, index) => (
+                            <CourseCard
+                                title={course.title}
+                                category={course.category}
+                                instructor={course.instructor}
+                                progress={60}
+                                key={course.id}
+                            />
+                        ))}
+                    </div>
+
+                    {/* Cursos visíveis a partir do `lg` */}
+                    <div className="hidden lg:grid grid-cols-3 gap-5 col-span-2 overflow-hidden">
                         {courses.map((course, index) => (
                             <CourseCard
                                 title={course.title}
                                 category={course.category}
                                 instructor={course.instructor}
                                 progress={60}
-                                key={index}
+                                key={course.id}
                             />
                         ))}
                     </div>
                 </div>
             </section>
-            <section className="grid grid-cols-6 gap-5 mt-5">
-                <div className="col-span-4">
+            <section className="grid md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-5 mt-5">
+                <div className="lg:col-span-4">
                     <h2 className="text-(--headline) mb-6 text-xl font-medium">
                         Estatiticas
                     </h2>
-                    <div className="grid grid-cols-4 gap-5">
+                    <div className="grid lg:grid-cols-4 gap-5">
                         <div className="flex flex-col justify-between rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow bg-[#b87eed]/20 col-span-2">
                             <div className="flex items-center flex-col text-(--color4) gap-3">
                                 <p className="text-lg font-bold">Seu streak</p>
@@ -186,6 +200,7 @@ export default function MyProfile() {
                             <div className="flex justify-between gap-2 mt-5">
                                 {days.map((day, index) => (
                                     <div
+                                        key={index}
                                         className={`rounded-full p-2 size-8 flex items-center justify-center border-2 ${studyDay(
                                             index
                                         )}`}
@@ -196,13 +211,13 @@ export default function MyProfile() {
                             </div>
                         </div>
 
-                        <div className="bg-[#cfff5e]/20 rounded-2xl p-5 flex flex-col items-center justify-center gap-5 text-center text-[#cfff5e]">
+                        <div className="bg-[#cfff5e]/20 rounded-2xl p-5 flex-col items-center justify-center gap-5 text-center text-[#cfff5e] hidden lg:flex">
                             <p className="text-4xl font-bold">3</p>
                             <p className="text-xl font-medium">
                                 Cursos concluidos
                             </p>
                         </div>
-                        <div className="bg-[#8c7dff]/20 rounded-2xl p-5 flex flex-col items-center justify-center gap-5 text-center text-[#8c7dff]">
+                        <div className="bg-[#8c7dff]/20 rounded-2xl p-5 lg:flex flex-col items-center justify-center gap-5 text-center text-[#8c7dff] hidden">
                             <p className="text-4xl font-bold">4</p>
                             <p className="text-xl font-medium">
                                 Cursos iniciados
@@ -210,7 +225,7 @@ export default function MyProfile() {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-2 ">
+                <div className="lg:col-span-2">
                     <p className="text-lg font-medium mb-4 text-(--headline) ">
                         {new Date().toLocaleDateString('pt-BR', {
                             month: 'long',

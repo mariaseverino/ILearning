@@ -13,7 +13,7 @@ export default function CatalogFilter() {
         dificuldades: ['iniciante', 'intermediário', 'avançado'],
     };
     return (
-        <aside>
+        <div>
             <h2 className="text-xl font-semibold mb-4 text-(--headline)">
                 Filtre os cursos
             </h2>
@@ -37,6 +37,6 @@ export default function CatalogFilter() {
                     />
                 </div>
             </div>
-        </aside>
+        </div>
     );
 }

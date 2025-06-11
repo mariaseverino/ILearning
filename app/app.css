@@ -90,7 +90,7 @@ body {
 
 .marquee-content {
     display: inline-flex;
-    animation: marquee-scroll 10 s linear infinite;
+    animation: marquee-scroll 10s linear infinite;
 }
 
 .marquee-content span {

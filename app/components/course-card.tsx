@@ -81,7 +81,7 @@ export default function CourseCard({
     return (
         <Link to={`/course/${generateSlug(title)}/overview`}>
             <div
-                className={`flex flex-col justify-between rounded-xl p-4 cursor-pointer h-full ${getBG(
+                className={`flex flex-col justify-between rounded-xl p-4 cursor-pointer h-full min-w-[160px] ${getBG(
                     category
                 )}`}
             >

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router';
 
 export default function Sidebar() {
     return (
-        <aside className="h-screen fixed w-24 flex flex-col items-center justify-center">
+        <aside className="hidden h-screen fixed w-24 md:flex flex-col items-center justify-center">
             <div className="bg-(--card-background) flex flex-col justify-between h-2/3 ml-4 rounded-full">
                 <nav className="flex flex-col gap-4 items-center">
                     <NavLink
