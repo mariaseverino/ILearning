@@ -4,28 +4,13 @@ import Calendar from 'react-calendar';
 import { Flame } from 'lucide-react';
 import CourseCard from '~/components/course-card';
 import { Link } from 'react-router';
+import type { Course } from '~/types/course';
 
 export function meta({}: Route.MetaArgs) {
     return [
         { title: 'MyProfile' },
         { name: 'description', content: 'MyProfile' },
     ];
-}
-
-export interface Lesson {
-    id: string;
-    title: string;
-    videoUrl: string;
-}
-
-export interface Course {
-    id: string;
-    title: string;
-    description: string;
-    thumbnailUrl: string;
-    category: string;
-    instructor: string;
-    lessons: Lesson[];
 }
 
 type ValuePiece = Date | null;
@@ -151,7 +136,7 @@ export default function MyProfile() {
                         {courses.slice(0, 2).map((course, index) => (
                             <CourseCard
                                 title={course.title}
-                                category={course.category}
+                                category={course.category!}
                                 instructor={course.instructor}
                                 progress={60}
                                 key={course.id}
@@ -164,7 +149,7 @@ export default function MyProfile() {
                         {courses.map((course, index) => (
                             <CourseCard
                                 title={course.title}
-                                category={course.category}
+                                category={course.category!}
                                 instructor={course.instructor}
                                 progress={60}
                                 key={course.id}

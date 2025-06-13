@@ -2,21 +2,6 @@ import { Code, CodeXml, LayoutGrid, Server } from 'lucide-react';
 import { Link } from 'react-router';
 import { generateSlug } from '~/utils/generateSlug';
 
-export interface Lesson {
-    id: string;
-    title: string;
-    videoUrl: string;
-}
-
-export interface Course {
-    id: string;
-    title: string;
-    description: string;
-    thumbnailUrl: string;
-    category: string;
-    instructor: string;
-    lessons: Lesson[];
-}
 interface CourseCardProps {
     title: string;
     category: string;
